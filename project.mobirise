@@ -13,8 +13,8 @@
         "warningColor": "#767676",
         "dangerColor": "#a0a0a0",
         "mainFont": "Roboto",
-        "display1Font": "Roboto",
-        "display1Size": 4.5,
+        "display1Font": "Lobster",
+        "display1Size": "10",
         "display2Font": "Roboto",
         "display2Size": 2.2,
         "display5Font": "Roboto",
@@ -26,7 +26,8 @@
         "isRoundedButtons": false,
         "isScrollToTopButton": false,
         "arrowColor": "#4ea2e3"
-      }
+      },
+      "additionalSetColors": []
     },
     "path": "@PROJECT_PATH@",
     "versionFirst": "4.12.3",
@@ -35,14 +36,23 @@
         "css": "'Roboto', sans-serif",
         "name": "Roboto",
         "url": "https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i"
+      },
+      {
+        "css": "'Source Code Pro', monospace",
+        "name": "Source Code Pro",
+        "url": "https://fonts.googleapis.com/css?family=Source+Code+Pro:200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,900,900i"
+      },
+      {
+        "css": "'Lobster', display",
+        "name": "Lobster",
+        "url": "https://fonts.googleapis.com/css?family=Lobster:400"
       }
     ],
-    "uniqCompNum": 15,
+    "uniqCompNum": 16,
     "versionPublish": "4.12.3",
     "screenshot": "screenshot.png",
     "imageResize": true,
     "favicon": "@PROJECT_PATH@/assets/images/11-128x72.png",
-    "canonical-url": false,
     "robotsSwitcher": false,
     "sitemapSwitcher": false,
     "sitemapSwitcherAuto": false,
@@ -64,23 +74,31 @@
         {
           "alias": false,
           "_styles": {
-            "& when not (@fullScreen)": {
-              "padding-top": "(@paddingTop * 15px)",
-              "padding-bottom": "(@paddingBottom * 15px)"
-            },
+            "padding-top": "(@paddingTop * 15px)",
+            "padding-bottom": "(@paddingBottom * 15px)",
             "& when (@bg-type = 'color')": {
               "background-color": "@bg-value"
             },
             "& when (@bg-type = 'image')": {
               "background-image": "url(@bg-value)"
+            },
+            ".carousel-img": {
+              "width": "100%",
+              "margin": "0"
+            },
+            "@media (max-width: 767px)": {
+              ".amp-carousel-button": {
+                "display": "none"
+              }
+            },
+            ".mbr-section-title": {
+              "color": "#ffffff"
             }
           },
-          "_name": "header4",
-          "_customHTML": "<section class=\"header4\" group=\"Headers\" plugins=\"amp-main\" mbr-class=\"{'mbr-fullscreen': fullScreen}\">\n\n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\" checked>\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"6\" condition=\"fullScreen == false\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"6\" condition=\"fullScreen == false\">\n        \n        <input type=\"checkbox\" title=\"Show Title\" name=\"showTitle\">\n        <input type=\"checkbox\" title=\"Show Text\" name=\"showText\">\n        <input type=\"checkbox\" title=\"Show Buttons\" name=\"showButtons\">\n\n        <fieldset type=\"background\" name=\"bg\">\n            <input type=\"image\" title=\"Background Image\" value=\"@PROJECT_PATH@/assets/images/1.jpeg\" selected>\n            <input type=\"color\" title=\"Background Color\" value=\"#15181b\"> \n        </fieldset>\n    <!-- End block parameters -->\n    </mbr-parameters>\n\n    <div class=\"container\">\n        <h1 class=\"mbr-fonts-style mbr-section-title align-left mbr-black mbr-bold mbr-pt-1 mbr-pb-3\" mbr-theme-style=\"display-1\" mbr-if=\"showTitle\" data-app-selector=\".mbr-section-title\">\n            Mobirise AMP Theme\n        </h1>\n        <h2 class=\"mbr-fonts-style mbr-section-subtitle align-left mbr-black mbr-light mbr-pb-2\" mbr-theme-style=\"display-2\" mbr-if=\"showText\" data-app-selector=\".mbr-section-subtitle, .mbr-section-btn\">\n            Building the future web, together\n        </h2>\n        <div class=\"mbr-section-btn align-left\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove\" mbr-buttons mbr-theme-style=\"display-4\">\n            <a class=\"btn btn-md btn-black\" href=\"https://mobirise.co\">\n                TRY IT\n            </a>\n        </div>\n    </div>\n</section>",
-          "_anchor": "header4-0",
-          "_isUserblock": true,
-          "_sourceTheme": "mobirise-amp",
-          "_cid": "s9JPYAtw56",
+          "_name": "slider3",
+          "_customHTML": "<section class=\"slider3 slider\" group=\"Carousels &amp; Sliders\" plugins=\"amp-main,amp-carousel\">\n\n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"range\" inline=\"\" title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"8\" step=\"1\" value=\"2\">\n        <input type=\"range\" inline=\"\" title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"8\" step=\"1\" value=\"2\">\n        \n        <input type=\"checkbox\" title=\"Show Title\" name=\"showTitle\">\n        <input type=\"checkbox\" title=\"Show Subtitle\" name=\"showSubtitle\">\n        \n        <input type=\"checkbox\" title=\"Autoplay\" name=\"autoplay\" checked=\"\" condition=\"imagesAmount > 1 &amp;&amp; typeSlide != 'carousel'\">\n            <input type=\"range\" inline=\"\" title=\"Delay\" name=\"delay\" min=\"1000\" max=\"5000\" step=\"1000\" value=\"1000\" condition=\"autoplay &amp;&amp; imagesAmount > 1 &amp;&amp; typeSlide != 'carousel'\">\n        \n        <select title=\"Images\" name=\"imagesAmount\">\n            <option value=\"2\" selected=\"\">2</option>\n            <option value=\"3\">3</option>\n            <option value=\"4\">4</option>\n            <option value=\"5\">5</option>\n            <option value=\"6\">6</option>\n        </select>\n\n        <fieldset type=\"background\" name=\"bg\">\n            <input type=\"image\" title=\"Background Image\" value=\"@PROJECT_PATH@/assets/images/1-1920x1080.jpeg\" selected=\"\">\n            <input type=\"color\" title=\"Background Color\" value=\"#ffffff\">\n        </fieldset>\n    <!-- End block parameters -->\n    </mbr-parameters>\n\n    <div class=\"container\">\n        <div class=\"mbr-pb-4\" mbr-if=\"showTitle || showSubtitle\">\n            <h3 class=\"mbr-fonts-style mbr-section-title mbr-light align-center\" mbr-if=\"showTitle\" mbr-theme-style=\"display-1\" data-app-selector=\".mbr-section-title\">Foto des Tages</h3>\n            <h4 class=\"mbr-fonts-style mbr-section-subtitle mbr-light align-center\" mbr-if=\"showSubtitle\" mbr-theme-style=\"display-7\" data-app-selector=\".mbr-section-subtitle\">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore inciduneeeeeeecusandae error ipsam distinctio, ipsum.</h4>\n        </div>\n        <div class=\"slider-box\" data-autoplay=\"{{autoplay}}\" data-delay=\"{{delay}}\"><amp-carousel class=\"carousel\" width=\"13.5\" height=\"9\" layout=\"responsive\" type=\"slides\"><div class=\"carousel-img\">\n                    <amp-img class=\"mobirise-loader\" src=\"@PROJECT_PATH@/assets/images/1828291-1920x1080.jpeg\" alt=\"Mobirise\" width=\"16\" height=\"9\" layout=\"responsive\">\n                        <div placeholder=\"\" class=\"placeholder\"></div>\n                        <img class=\"mbr-temp\" src=\"@PROJECT_PATH@/assets/images/1828291-1920x1080.jpeg\" alt=\"Mobirise\" title=\"\">\n                    </amp-img>\n                </div><div class=\"carousel-img\">\n                    <amp-img class=\"mobirise-loader\" src=\"@PROJECT_PATH@/assets/images/schwarz-1920x1080.jpg\" alt=\"leon\" width=\"16\" height=\"9\" layout=\"responsive\" title=\"leon\">\n                            <div placeholder=\"\" class=\"placeholder\"></div>\n                            <img class=\"mbr-temp\" src=\"@PROJECT_PATH@/assets/images/schwarz-1920x1080.jpg\" alt=\"leon\" title=\"leon\">\n                    </amp-img>\n                </div></amp-carousel>\n            \n        </div>\n    </div>\n</section>",
+          "_cid": "sao8MPUefi",
+          "_anchor": "slider3-f",
           "_protectedParams": [],
           "_global": false,
           "_once": false,
